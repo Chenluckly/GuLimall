@@ -1,0 +1,11 @@
+docker run -p 3306:3306 --name mysql --privileged=true -v /tool/mysql/log:/var/log/mysql -v /tool/mysql/data:/var/lib/mysql -v /tool/mysql/conf:/var/etc/mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7
+
+
+docker run -p 6379:6379 --name redis --privileged=true -v /tool/redis/data:/redis/data -v /tool/redis/conf/redis.conf:/redis/conf/redis.conf -d redis redis-server /redis/conf/redis.conf
+
+
+
+<dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+</dependency>

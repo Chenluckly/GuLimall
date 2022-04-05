@@ -1,24 +1,23 @@
 package com.wh.gulimall.product.vo;
 
 import lombok.Data;
+import lombok.ToString;
+
+import java.util.List;
 
 /**
  * @Description:
  * @Created: with IntelliJ IDEA.
  * @author: 夏沫止水
- * @createTime: 2020-05-29 09:26
+ * @createTime: 2020-06-19 18:18
  **/
 
 @Data
-public class AttrRespVo extends AttrVo {
-
-    /**
-     *
-     */
-    private String catelogName;
+@ToString
+public class SpuItemAttrGroupVo {
 
     private String groupName;
 
-    private Long[] catelogPath;
+    private List<com.wh.gulimall.product.vo.Attr> attrs;
 
 }

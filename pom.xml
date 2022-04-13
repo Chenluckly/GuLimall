@@ -16,6 +16,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
         <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
+        <elasticsearch.version>7.4.2</elasticsearch.version>
     </properties>
 
    <modules>
@@ -29,6 +30,7 @@
        <module>gulimall-common</module>
        <module>gulimall-gateway</module>
        <module>gulimall-third-party</module>
+       <module>gulimall-search</module>
    </modules>
 
 

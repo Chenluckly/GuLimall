@@ -34,8 +34,8 @@ public class AttrController {
     @Autowired
     private ProductAttrValueService productAttrValueService;
 
-    ///product/attr/base/listforspu/{spuId}
 
+    ///product/attr/base/listforspu/{spuId}
     /**
      *  获取spu规格
      */

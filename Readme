@@ -1,0 +1,5 @@
+开启Gulimall项目：
+1.启动Nacos服务
+2.启动全部微服务
+3.启动虚拟机CentOs8克隆
+4.打开VSCode，使用npm run dev命令，在终端启动renre-fast-vue项目

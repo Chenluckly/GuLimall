@@ -13,6 +13,13 @@ spring:
 #      secret-key: Wc9KOHDEelkZM4VuDho37TGNLeRqe1
 #      oss:
 #        endpoint: https://oss-cn-shanghai.aliyuncs.com
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  thymeleaf:
+    cache: false
+
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
   global-config:

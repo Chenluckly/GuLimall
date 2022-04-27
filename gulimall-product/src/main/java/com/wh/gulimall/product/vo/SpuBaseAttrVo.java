@@ -11,11 +11,18 @@ import lombok.ToString;
  **/
 
 @Data
-@ToString
 public class SpuBaseAttrVo {
 
     private String attrName;
 
     private String attrValue;
+
+    @Override
+    public String toString() {
+        return "SpuBaseAttrVo{" +
+                "attrName='" + attrName + '\'' +
+                ", attrValue='" + attrValue + '\'' +
+                '}';
+    }
 
 }

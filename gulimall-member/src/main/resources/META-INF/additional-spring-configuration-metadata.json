@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "spring.application.feign.client.config.default.connectTimeout",
+      "type": "java.lang.String",
+      "description": "Description for spring.application.feign.client.config.default.connectTimeout."
+  }
+] }

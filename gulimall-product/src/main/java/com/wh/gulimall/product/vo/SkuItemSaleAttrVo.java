@@ -20,6 +20,7 @@ public class SkuItemSaleAttrVo {
 
     private String attrName;
 
-    private List<AttrValueWithSkuIdVO> attrValues;
+    private List<AttrValueWithSkuIdVo> attrValues;
+
 
 }

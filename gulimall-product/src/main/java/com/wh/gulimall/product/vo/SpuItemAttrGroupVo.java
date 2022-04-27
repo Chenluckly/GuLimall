@@ -13,11 +13,17 @@ import java.util.List;
  **/
 
 @Data
-@ToString
 public class SpuItemAttrGroupVo {
 
     private String groupName;
 
-    private List<com.wh.gulimall.product.vo.Attr> attrs;
+    private List<SpuBaseAttrVo> attrs;
 
+    @Override
+    public String toString() {
+        return "SpuItemAttrGroupVo{" +
+                "groupName='" + groupName + '\'' +
+                ", attrs=" + attrs +
+                '}';
+    }
 }

@@ -1,16 +1,24 @@
 package com.wh.gulimall.thirdparty;
 
+
+import com.alibaba.nacos.common.util.UuidUtils;
 import com.aliyun.oss.ClientException;
 import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.OSSException;
 import com.aliyun.oss.model.PutObjectRequest;
+import com.wh.gulimall.thirdparty.component.SmsComponent;
+import com.wh.gulimall.thirdparty.util.HttpUtils;
+import org.apache.http.HttpResponse;
+import org.apache.http.util.EntityUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 import java.io.File;
+import java.util.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -19,6 +27,14 @@ class GulimallThirdPartyApplicationTests {
 
     @Resource
     OSSClient ossClient;
+
+    @Autowired
+    private SmsComponent smsComponent;
+
+    @Test
+    public void testzz(){
+        smsComponent.sengSmsCode("17366932008","123456");
+    }
 
 
     @Test
@@ -69,5 +85,58 @@ class GulimallThirdPartyApplicationTests {
             }
         }
     }
+
+
+    @Test
+    public void bbb(){
+        Random random = new Random();
+        StringBuilder sb = new StringBuilder(10);
+        for (int i = 0; i < 10; i++) {
+            sb.append((char) ('0' + random.nextInt(6)));
+        }
+        System.out.println("随机的10位数字："+sb.toString());
+
+        String aString = UUID.randomUUID().toString().replace("-", "");
+        System.out.println("UUID随机32位字母加数字: "+aString);
+    }
+
+    @Test
+    public void testMessage(){
+        String host = "https://jumsendsms.market.alicloudapi.com";
+        String path = "/sms/send-upgrade";
+        String method = "POST";
+        String appcode = "8b556a615ad44449a5ab47d348963864";
+        Map<String, String> headers = new HashMap<String, String>();
+        //最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
+        headers.put("Authorization", "APPCODE " + appcode);
+        Map<String, String> querys = new HashMap<String, String>();
+        querys.put("mobile", "17366932008");
+        querys.put("templateId", "M72CB42894");
+        querys.put("value", "123456");
+        Map<String, String> bodys = new HashMap<String, String>();
+
+
+        try {
+            /**
+             * 重要提示如下:
+             * HttpUtils请从
+             * https://github.com/aliyun/api-gateway-demo-sign-java/blob/master/src/main/java/com/aliyun/api/gateway/demo/util/HttpUtils.java
+             * 下载
+             *
+             * 相应的依赖请参照
+             * https://github.com/aliyun/api-gateway-demo-sign-java/blob/master/pom.xml
+             */
+            HttpResponse response = HttpUtils.doPost(host, path, method, headers, querys, bodys);
+            System.out.println(response.toString());
+            //获取response的body
+            System.out.println(EntityUtils.toString(response.getEntity()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
 
 }

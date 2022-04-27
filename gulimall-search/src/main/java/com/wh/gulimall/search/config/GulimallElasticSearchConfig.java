@@ -35,12 +35,12 @@ public class GulimallElasticSearchConfig {
 //                         .HeapBufferedResponseConsumerFactory(30 * 1024 * 1024 * 1024));
         COMMON_OPTIONS = builder.build();
     }
-//
-//    @Bean
-//    public RestHighLevelClient esRestClient(){
-//        RestHighLevelClient client = new RestHighLevelClient(
-//                RestClient.builder(new HttpHost("192.168.77.130", 9200, "http")));
-//        return  client;
-//    }
+
+    @Bean
+    public RestHighLevelClient esRestClient(){
+        RestHighLevelClient client = new RestHighLevelClient(
+                RestClient.builder(new HttpHost("192.168.91.128", 9200, "http")));
+        return  client;
+    }
 
 }

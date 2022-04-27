@@ -3,8 +3,18 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-  application:
-    name: gulimall-third-party
+    alicloud:
+      access-key: LTAI5tDnKgkX2i9jSKKLtnjE
+      secret-key: zSDty6tTJrzWhTV1eijWVm2eeSGptM
+      oss:
+        endpoint: oss-cn-shanghai.aliyuncs.com
+        bucket: w-gulimall
+      sms:
+        host: https://jumsendsms.market.alicloudapi.com
+        path: /sms/send-upgrade
+        appCode: 8b556a615ad44449a5ab47d348963864
+        templateId: M72CB42894
+
 
 server:
   port: 30000

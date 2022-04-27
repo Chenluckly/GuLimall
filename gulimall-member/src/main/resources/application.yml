@@ -8,6 +8,15 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+  application:
+    name: gulimall-member
+    feign:
+      client:
+        config:
+          default:
+            connectTimeout: 10000 #单位毫秒
+            readTimeout: 10000 #单位毫秒
+
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
   global-config:

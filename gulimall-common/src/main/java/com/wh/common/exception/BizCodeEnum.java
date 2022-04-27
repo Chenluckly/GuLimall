@@ -53,4 +53,5 @@ public enum BizCodeEnum {
     public String getMessage() {
         return message;
     }
+
 }

@@ -3,6 +3,7 @@ package com.wh.gulimall.product.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.wh.common.utils.PageUtils;
 import com.wh.gulimall.product.entity.SkuInfoEntity;
+import com.wh.gulimall.product.vo.SkuItemVo;
 
 import java.util.List;
 import java.util.Map;
@@ -24,5 +25,7 @@ public interface SkuInfoService extends IService<SkuInfoEntity> {
 
 
     List<SkuInfoEntity> getSkusBySpuId(Long spuId);
+
+    SkuItemVo item(Long skuId);
 }
 

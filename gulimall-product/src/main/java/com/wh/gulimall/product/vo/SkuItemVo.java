@@ -15,13 +15,11 @@ import java.util.List;
  * @createTime: 2020-06-19 16:46
  **/
 
-
-@ToString
 @Data
 public class SkuItemVo {
 
     //1、sku基本信息的获取  pms_sku_info
-    private SkuInfoEntity info;
+    private SkuInfoEntity skuInfoEntity;
 
     private boolean hasStock = true;
 
@@ -37,7 +35,8 @@ public class SkuItemVo {
     //5、获取spu的规格参数信息
     private List<SpuItemAttrGroupVo> groupAttrs;
 
-    //6、秒杀商品的优惠信息
-    private com.wh.gulimall.product.vo.SeckillSkuVo seckillSkuVo;
+
+//    //6、秒杀商品的优惠信息
+//    private com.wh.gulimall.product.vo.SeckillSkuVo seckillSkuVo;
 
 }

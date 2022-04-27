@@ -13,6 +13,9 @@ spring:
 #      secret-key: Wc9KOHDEelkZM4VuDho37TGNLeRqe1
 #      oss:
 #        endpoint: https://oss-cn-shanghai.aliyuncs.com
+  redis:
+    host: 192.168.91.128
+    port: 6379
 
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
@@ -29,5 +32,10 @@ mybatis-plus:
       logic-delete-value: 0
       logic-not-delete-value: 1
 
+
 server:
   port: 10000
+
+logging:
+  level:
+    com.wh.gulimall: error

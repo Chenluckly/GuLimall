@@ -8,11 +8,6 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-#    alicloud:
-#      access-key: LTAI5tKLGh9F8yWcvKak314g
-#      secret-key: Wc9KOHDEelkZM4VuDho37TGNLeRqe1
-#      oss:
-#        endpoint: https://oss-cn-shanghai.aliyuncs.com
   redis:
     host: 192.168.91.128
     port: 6379
